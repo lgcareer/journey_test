@@ -92,6 +92,12 @@
 
   </dependencies>
 
+  <scm>
+    <connection>scm:git:https://github.com/lgcareer/journey_test.git</connection>
+    <developerConnection>scm:git:https://github.com/lgcareer/journey_test.git</developerConnection>
+    <url>https://github.com/lgcareer/journey_test.git</url>
+  </scm>
+
   <build>
     <sourceDirectory>src/main/java</sourceDirectory>
     <plugins>
@@ -114,6 +120,30 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.5.2</version>
+        <configuration>
+          <autoVersionSubmodules>true</autoVersionSubmodules>
+          <!--<providerImplementations>
+            <git>jgit</git>
+          </providerImplementations>
+          <username></username>
+          <password></password>-->
+          <tagNameFormat>release-@{project.version}</tagNameFormat>
+          <tagBase>release-${project.version}</tagBase>
+          <goals>-f pom.xml deploy</goals>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-provider-jgit</artifactId>
+            <version>1.9.5</version>
+          </dependency>
+        </dependencies>
       </plugin>
 
       <!--<plugin>
