@@ -16,6 +16,7 @@ hdfs dfs -put /opt/data/student/${前一天的数据} /opt/data/student
 hdfs dfs -put /opt/data/course/${前一天的数据} /opt/data/course
 hdfs dfs -put /opt/data/sc/${前一天的数据} /opt/data/sc
 
+
 3,业务处理
 见com.journey.demo.spark.StudentDataProcess
 见com.journey.demo.spark.CourseDataProcess
